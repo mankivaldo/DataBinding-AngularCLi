@@ -1,0 +1,11 @@
+<li [ngClass]="{'list-group-item': true,
+                 'list-group-item-success': appareilleStatus ==='Allumer',
+                 'list-group-item-danger': appareilleStatus ==='Etient'}">
+    <div 
+    style="width:20px; height:20px;background-color:red;" 
+    *ngIf="appareilleStatus === 'Allumer'"></div>
+    <h4 [ngStyle]="{color: getColor()}">Appareille: {{ appareilleName}} -- Status:{{  getStatus() }}</h4>
+    <input type="text" class="from-control" [(ngModel)]="appareilleName"><br><br>
+    <button class="btn btn-danger">Red</button> 
+    <button class="btn btn-success">Green</button>
+</li>
